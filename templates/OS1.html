@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}">
+    <title>ЗО-1</title>
+</head>
+<body>
+    <center>
+    <form action="" method="POST">
+        <p>
+            <input type="number" name="Ci" id="Ci" class="form-control" placeholder="Введіть Ci" step="0.01">
+            <input type="number" name="Gv" id="Gv" class="form-control" placeholder="Введіть Gv" step="0.01">
+            <input type="number" name="Xz" id="Xz" class="form-control" placeholder="Введіть Xz" step="0.01">
+            <input type="number" name="Xp" id="Xp" class="form-control" placeholder="Введіть Xp" step="0.01">
+            <input type="number" name="Xr" id="Xr" class="form-control" placeholder="Введіть Xr" step="0.01">
+        </p>
+        <p>
+            <button type="submit" name="delta">Розрахунок ЗО-1</button>
+        </p>
+    </form>
+    </center>
+    <ol><h3>Розрахунок:</h3>
+        <li>Мембрана:</li>
+            <ul>
+                <li>Значення Gp: {{ "{:04.4f}".format(Gp) }}</li>
+                <li>Значення Cp: {{ "{:04.4f}".format(Cp) }}</li>
+                <li>Значення Gk: {{ "{:04.4f}".format(Gk) }}</li>
+                <li>Значення Ck: {{ "{:04.4f}".format(Ck) }}</li>
+            </ul>
+        <li>Розділювач:</li>
+            <ul>
+                <li>Значення Gr: {{ "{:04.4f}".format(Gr) }}</li>
+                <li>Значення Gs: {{ "{:04.4f}".format(Gs) }}</li>
+            </ul>
+        <li>Змішувач:</li>
+            <ul>
+                <li>Значення Gi: {{ "{:04.4f}".format(Gi) }}</li>
+                <li>Значення Cv: {{ "{:04.4f}".format(Cv) }}</li>
+            </ul>
+        <li>Перевірка розрахунку:</li>
+            <ul>
+                <li>Значення LP: {{ "{:04.4f}".format(LP) }}</li>
+                <li>Значення RP: {{ "{:04.4f}".format(RP) }}</li>
+                <li>Значення delta: {{ "{:04.4f}".format(delta) }}</li>
+            </ul>
+    </ol>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <nav class="my-2 mr-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/">Повернутись на головну сторінку</a>
+            <a class="p-2 text-dark" href="/OS2">ЗО-2</a>
+        </nav>
+    </div>
+</body>
+</html>
